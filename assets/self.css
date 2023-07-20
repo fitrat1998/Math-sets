@@ -1,0 +1,244 @@
+#form input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+}
+
+#form2 input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+    
+}
+
+#form6 input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+    
+}
+
+#form4 input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+    
+}
+
+#form5 input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+    
+}
+
+#form7 input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+    
+}
+
+#form8 input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+    
+}
+
+#form9 input{
+
+    width: 50px;
+    text-align: center;
+    background-color: #117864;
+    color: #fff;
+    border: 0.3px solid #16A085;
+    
+}
+#span,#span1{
+    font-size: px;
+}
+body{
+    background-color:  ;
+}
+
+.back{
+    background-color: #D0D3D4   ;
+}
+.mynum{
+    width: 15%;
+    padding: 5px;
+    border: #999 0.5px solid;
+    margin: 10px;
+}
+.rand{
+    width: 15%;
+    margin-left: 30px;
+}
+.file{
+    width: 15%;
+    margin-left: 50px;
+}
+
+.info{
+    width: 60%;
+    margin-top: 20px ;
+}
+body{
+    background-color: #fbfcfcc5;
+}
+.yashil{
+    /*width: 10px;*/
+    /*height: 30%;*/
+    background-color: red;
+    color: #ffffff;
+    border-radius:3px;
+    margin: 5px;
+    transition: all .3s ease;
+
+}
+.sariq{
+    /*width: 10px;
+    height: 10px;*/
+    
+    color: #ffffff;
+    border-radius: 3px;
+    margin: 5px;
+    transition: all .3s ease;
+
+}
+.qizil{
+    /*width: 10px;
+    height: 10px;*/
+    
+    color: #ffffff;ra
+    border-radius: 3px;
+    margin: 5px;
+    transition: all .3s ease;
+
+}
+
+.bg{
+    position: relative;
+}
+ .num {
+    width: 100px;
+    height: 100px;
+    
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+  }
+  
+  @keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    
+    
+  }
+
+
+  .blue{
+    border-bottom: solid 1px #0B5345;
+
+    height:50px;
+  }
+  .yellow{
+    border-bottom: solid 1px orange;
+    
+    height:50px;
+  }
+  .red{
+    border-bottom: solid 1px #b12929;
+    height:50px;
+  }
+
+
+
+.div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0%   { left:0px; top:0px;}
+  25%  { left:200px; top:0px;}
+  50%  { right:200px; top:200px;}
+  75%  { background-color:green;left:0px; top:200px;border:solid 1px green;}
+  
+} 
+
+
+.rand1{
+  transition: all .3s ease;
+  position: absolute;
+  display: inline-block;
+  top: 50px;
+  left: 0;
+}
+
+.rand2{
+  transition: all .3s ease;
+  position: absolute;
+  display: inline-block;
+  top: 128px;
+  left: 0;
+}
+.rand3{
+  transition: all .3s ease;
+  position: absolute;
+  display: inline-block;
+  top: 128px;
+  left: 0;
+}
+
+
+#mover {
+  width: 1000px;
+  position: relative;
+  background: ;
+}
+
+ #myAnimation {
+    margin-left:0;
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+  #myAnimation2 {
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+  #myAnimation3 {
+    width: auto;
+    height: auto;
+    position: relative;
+  }

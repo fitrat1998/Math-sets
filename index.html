@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    <link href="assets/style.css" rel="stylesheet"  crossorigin="anonymous">
+    <script src="assets/head.js" crossorigin="anonymous"></script>
+    <link href="assets/self.css" rel="stylesheet">
+</head>
+<body>
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <!--begining of show-->
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+     <div id="container">
+      <div class="row bg">
+        <div class="col border" style="margin-left:15px!important;">
+          <!--begining of random 1-->
+              <input type="number" id="r1" class="border m-2" min="1" max="12" placeholder="0"  oninput="inc()">
+              <button class="button btn-warning border-0 m-2" onclick="rand()">Tasodifiy</button>
+              <input type="file" onchange="read()" id="text">
+              <form id="form">
+              </form>
+          <!--end of random 1-->
+          <!--begining of random 2-->
+              <input type="number" id="r2" class="border m-2" min="1" max="12" placeholder="0"  oninput="inc2()">
+              <button class="button btn-warning border-0 m-2" onclick="rand2()">Tasodifiy</button>
+              <input type="file"  onchange="read2()" id="text2">
+              <form id="form2">
+              </form>
+
+            </div>
+            <div class="col-md-1 border" >
+              <select name='sel' id="sort"  onchange="" style="margin:7px 0px;border:2px solid #ECF0F1;border-radius:5px;">
+                <option name="s">Satr</option>
+                <option name="b">Butun</option>
+                <option name="h">Haqiqiy</option>
+              </select>
+            </div>
+
+
+
+    <div class="col border" style="margin-right:15px!important;">
+      <h4 align="center">Natija</h4>
+      <input type="text" name="hiddenInput" style="visibility: hidden;" id="hiddenInput">
+     <div class="col-md-6" >
+           
+        </div>
+      </div>
+  
+
+          <div id="result">
+            
+          </div>
+             
+        </div>
+      </div>
+      <!---start of procces--->
+      <div class="row bg m-2">
+        <div class="col border">
+          <button  id="birlashma" class="btn btn-primary m-1" onclick ="birlashma()" onchange="isInt()">Birlashma</button><br>
+          <button  id="ayirmaA" class="btn btn-primary m-1" onclick="ayirmaA()">Ayirma A/B</button><br>
+          <button  id="ayirmaB" class="btn btn-primary m-1" onclick="ayirmaB()">Ayirma B/A</button><br>
+          <button  id="kesishma" class="btn btn-primary m-1" onclick="kesishma()">Kesishma</button><br>
+        </div>
+        <div class="col border">1</div>
+      </div>
+      <!---end of procces--->
+  </div>
+
+  <!--end of show-->
+
+
+
+
+
+
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">durud</div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">salam</div>
+</div>
+<script src="assets/bottom.js"></script>
+<script src="assets/bottom2.js"></script>
+<script src="assets/amal.js"></script>
+<script type="text/javascript">
+
+//filter
+
+// var inputs=document.getElementsByName("inp1");
+// var admissionNumber="";
+// for (var m=0;m<inputs.length;m++) {
+//     admissionNumber+=inputs[m].value+" ";
+//     console.log(admissionNumber);
+// }
+// console.log(admissionNumber);
+
+// function getSort(){
+
+//   let value =document.getElementById('sort').value;
+//   console.log(value)
+// }
+
+//filter
+
+
+  //mover
+let elem = document.getElementById('hiddenInput');
+let rect = elem.getBoundingClientRect();
+console.log(rect.left);
+
+
+let right = document.getElementById('birlashma');
+
+right.addEventListener("click",function(){
+
+  let elements = document.querySelectorAll('.rand1');
+  //console.log("click")
+  elements.forEach((element,index)=>{
+
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left -30)+"px";
+    }, index* 800)
+  })
+
+let elements1 = document.querySelectorAll('.rand2');
+  //console.log("click")
+  elements1.forEach((element,index)=>{
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left -30)+"px";
+    }, index* 1000)
+  })
+});
+//mover
+
+//mover
+let ayirA = document.getElementById('ayirmaA');
+
+ayirA.addEventListener("click",function(){
+
+  let ayirElement = document.querySelectorAll('.rand1');
+  //console.log("click")
+  ayirElement.forEach((element,index)=>{
+
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left + rect.right - 970)+"px";
+    }, index* 800)
+  })
+
+let ayirElement1= document.querySelectorAll('.rand2');
+  //console.log("click")
+  ayirElement1.forEach((element,index)=>{
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left + rect.right -970 )+"px";
+    }, index* 1000)
+  })
+});
+//mover
+
+//mover
+
+
+
+let ayirB = document.getElementById('ayirmaB');
+
+ayirB.addEventListener("click",function(){
+
+  let ayirBelement = document.querySelectorAll('.rand1');
+  //console.log("click")
+  ayirBelement.forEach((element,index)=>{
+
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left -30)+"px";
+    }, index* 800)
+  })
+
+let ayirBelemen2 = document.querySelectorAll('.rand2');
+  //console.log("click")
+  ayirBelemen2.forEach((element,index)=>{
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left -30)+"px";
+    }, index* 1000)
+  })
+});
+//mover
+
+// //mover
+
+let kes = document.getElementById('kesishma');
+
+kes.addEventListener("click",function(){
+
+  let kesel = document.querySelectorAll('.rand1');
+  //console.log("click")
+  kesel.forEach((element,index)=>{
+
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left -30)+"px";
+    }, index* 800)
+  })
+
+let kesel2 = document.querySelectorAll('.rand2');
+  //console.log("click")
+  kesel2.forEach((element,index)=>{
+    setTimeout(()=>{
+      element.style.left = (parseInt(element.style.left) + rect.left -30)+"px";
+    }, index* 1000)
+  })
+});
+//
+
+
+  function rand(){
+
+    let inp = document.querySelectorAll('#form input')
+    for(let i = 0; i < inp.length; i++){
+        inp[i].value = Math.floor(Math.random() * 100)
+        //inp[i].value = Math.floor(Math.random() * 100)
+    }
+  }
+  
+   function inc() {
+
+    let no = Number(document.querySelector("#r1").value);
+
+    let frm = document.getElementById('form');
+    frm.innerHTML = '';
+    frm.style.height = "35px";
+    for (let i = 0; i < no; i++) {
+        let textfield = document.createElement("input");
+        textfield.type = "text";
+        textfield.id = "foo";
+        textfield.name = "inp1";
+        textfield.style.left = (i * 55 ) + 35 + "px";
+        textfield.classList.add('rand1');
+        textfield.classList.add('myAnimation'); //
+
+        frm.append(textfield);
+    }    
+}
+
+function rand2(){
+
+let inp2 = document.querySelectorAll('#form2 input')
+for(let i = 0; i < inp2.length; i++){
+    inp2[i].value = Math.floor(Math.random() * 100)
+    //inp[i].value = Math.floor(Math.random() * 100)
+   }
+}
+  
+   function inc2() {
+
+    let no2 = Number(document.querySelector("#r2").value);
+
+    let frm2 = document.getElementById('form2')
+    frm2.innerHTML = ''
+    frm2.style.height = "80px";
+ 
+  for (let j = 0; j < no2; j++) {
+        let textfield = document.createElement("input");
+        textfield.type = "text";
+        textfield.id = "foo2";
+        textfield.name = "inp2";
+        textfield.style.left = (j * 55 ) + 35 + "px";
+        textfield.classList.add('rand2'); //myAnimation
+        textfield.classList.add('myAnimation2'); //
+        frm2.append(textfield);
+   }    
+}
+
+//birlashma
+function birlashma() {
+let arrA= [];
+let arrB = [];
+
+let for1 = document.querySelectorAll('#form input');
+  arrA = []
+  for1.forEach((key)=>{
+    arrA.push(key.value)
+  }); 
+
+  let for2 = document.querySelectorAll('#form2 input');
+  arrB = []
+  for2.forEach((key)=>{
+    arrB.push(key.value)
+  });
+    let birlashma = [...new Set([...arrA, ...arrB])];
+
+
+
+      let sort=document.getElementsByName("inp1");
+      let empty="";
+      for (var m=0;m<sort.length;m++) {
+          empty+=sort[m].value+" ";
+          
+      }
+
+
+
+      let value1 =document.getElementById('sort');
+      
+      let value = value1.options[value1.selectedIndex].text;
+      console.log(value)
+      
+
+      // for (i = 0; i < sort.length; i++)
+      // {
+      //   if (sort[i].value != Math.ceil(sort[i].value) && value!='Haqiqiy' ){
+   
+      //         alert("Iltimos to'g'ri tipni tanlang va mos raqamlarni kiriting!!!")
+
+      //   }else if(sort[i].value != Math.ceil(sort[i].value) && value=='Haqiqiy' ){
+      //     console.log("hammash joyashba")
+      //   }else{
+      //     console.log(1)
+      //   }
+      // }
+       
+    
+      for (i = 0; i < sort.length; i++)
+      {
+        if (sort[i].value != Math.ceil(sort[i].value) && value!='Haqiqiy')
+        {
+          alert("Iltimos tog'ri tipni tanlang")
+          alert("Iltimos tog'ri raqam  kiriting")
+          break;
+        }else if(sort[i].value ==sort[i].value && value=='Haqiqiy')
+        {
+          alert("haqiqiy zor")
+          //alert("Iltimos tog'ri raqam  kiriting")
+        }else if(sort[i].value == Math.ceil(sort[i].value) && value=='Butun'){
+
+          alert('butun zor')
+        }else if( sort[i].value ==sort[i].value && value=='Satr'){
+          alert('satr zor')
+        }
+        console.log('satr zor')
+      }
+
+
+       
+     
+      
+      let sort2=document.getElementsByName("inp2");
+      let empty2="";
+      for (var n=0;n<sort2.length;n++) {
+          empty2+=sort2[n].value+" ";
+          
+      }
+      console.log(empty2);
+
+
+for (i = 0; i < sort2.length; i++)
+      {
+        if (sort2[i].value != Math.ceil(sort2[i].value) && value!='Haqiqiy')
+        {
+          alert("Iltimos tog'ri tipni tanlang")
+          alert("Iltimos tog'ri raqam  kiriting")
+          break;
+        }else if(sort2[i].value ==sort2[i].value && value=='Haqiqiy')
+        {
+          alert("haqiqiy zor")
+          //alert("Iltimos tog'ri raqam  kiriting")
+        }else if(sort2[i].value == Math.ceil(sort2[i].value) && value=='Butun'){
+
+          alert('butun zor')
+        }else if( sort2[i].value ==sort2[i].value && value=='Satr'){
+          alert('satr zor')
+        }
+        console.log('satr zor')
+      }
+
+      }
+//birlashma
+
+//upload from text
+function read() {
+    let text = document.getElementById('text').files[0];
+
+    let reader = new FileReader();
+    
+    reader.readAsText(text);
+
+
+    reader.addEventListener('load',function(){
+      console.log(reader.result)
+      const rows = reader.result.split("\n");
+
+      rows.forEach((row,index)=>{
+        if(index === 0){
+          let frm = document.getElementById('form')
+          frm.innerHTML = ''
+          frm.style.height = "37px";
+          row.split(" ").forEach((element, j)=>
+          {
+            let textfield = document.createElement("input");
+            textfield.type = "text";
+            textfield.id = "foo";
+            textfield.style.left = (j * 55 ) + 35 + "px";
+            textfield.classList.add('rand1');
+            textfield.classList.add('myAnimation'); //
+            textfield.value = element;
+            frm.append(textfield);
+          })
+
+        }
+        return; 
+      })
+    })  
+ }
+
+ function read2() {
+    let text = document.getElementById('text2').files[0];
+
+    let reader = new FileReader();
+    
+    reader.readAsText(text);
+
+
+    reader.addEventListener('load',function(){
+      console.log(reader.result)
+      const rows = reader.result.split("\n");
+
+      rows.forEach((row,index)=>{
+        if(index === 1){
+          let frm2 = document.getElementById('form2')
+          frm2.innerHTML = ''
+          frm2.style.height = "60px";
+          row.split(" ").forEach((element, j)=>
+          {
+            let textfield = document.createElement("input");
+            textfield.type = "text";
+            textfield.id = "foo2";
+            textfield.style.left = (j * 55 ) + 35 + "px";
+            textfield.classList.add('rand2'); //myAnimation
+            textfield.value = element;
+            textfield.classList.add('myAnimation2'); //
+            frm2.append(textfield);
+          })
+
+        }
+        return; 
+      })
+    })  
+ }
+//upload from text
+
+ // ayirma AB
+function ayirmaA(){
+let arr = []
+let arr2 = []
+let for1 = document.querySelectorAll('#form input')
+  arr = []
+  for1.forEach((key)=>{
+    arr.push(key.value)
+  })  
+
+  let for2 = document.querySelectorAll('#form2 input')
+  arr2 = []
+  for2.forEach((key)=>{
+    arr2.push(key.value)
+  })  
+
+let w = new Set(arr);
+let w2 = new Set(arr2);
+
+let ayirmaA = new Set([...w].filter(x => !w2.has(x)));
+console.log(ayirmaA);
+
+
+      let sort=document.getElementsByName("inp1");
+      let empty="";
+      for (var m=0;m<sort.length;m++) {
+          empty+=sort[m].value+" ";
+          
+      }
+      console.log(empty);
+     
+
+ 
+
+
+      let sort2=document.getElementsByName("inp2");
+      let empty2="";
+      for (var n=0;n<sort2.length;n++) {
+          empty2+=sort2[n].value+" ";
+          
+      }
+      console.log(empty2);
+
+}
+//ayirma BA
+function ayirmaB() {
+  let arr = []
+let arr2 = []
+let for1 = document.querySelectorAll('#form input')
+  arr = []
+  for1.forEach((key)=>{
+    arr.push(key.value)
+  })  
+
+  let for2 = document.querySelectorAll('#form2 input')
+  arr2 = []
+  for2.forEach((key)=>{
+    arr2.push(key.value)
+  })  
+
+  let w = new Set(arr);
+let w2 = new Set(arr2);
+
+let ayirmaB = new Set([...w2].filter(x => !w.has(x)));
+console.log(ayirmaB);
+
+
+      let sort=document.getElementsByName("inp1");
+      let empty="";
+      for (var m=0;m<sort.length;m++) {
+          empty+=sort[m].value+" ";
+          
+      }
+      console.log(empty);
+      
+
+      let sort2=document.getElementsByName("inp2");
+      let empty2="";
+      for (var n=0;n<sort2.length;n++) {
+          empty2+=sort2[n].value+" ";
+          
+      }
+      console.log(empty2);
+
+}
+
+function read() {
+    let text = document.getElementById('text').files[0];
+
+    let reader = new FileReader();
+    
+    reader.readAsText(text);
+
+
+    reader.addEventListener('load',function(){
+      console.log(reader.result)
+      const rows = reader.result.split("\n");
+
+      rows.forEach((row,index)=>{
+        if(index === 0){
+          let frm = document.getElementById('form')
+          frm.innerHTML = ''
+          frm.style.height = "37px";
+          row.split(" ").forEach((element, j)=>
+          {
+            let textfield = document.createElement("input");
+            textfield.type = "text";
+            textfield.id = "foo";
+            textfield.style.left = (j * 55 ) + 35 + "px";
+            textfield.classList.add('rand1');
+            textfield.classList.add('myAnimation'); //
+            textfield.value = element;
+            frm.append(textfield);
+          })
+
+        }
+        return; 
+      })
+    })  
+ }
+
+ function read2() {
+    let text = document.getElementById('text2').files[0];
+
+    let reader = new FileReader();
+    
+    reader.readAsText(text);
+
+
+    reader.addEventListener('load',function(){
+      console.log(reader.result)
+      const rows = reader.result.split("\n");
+
+      rows.forEach((row,index)=>{
+        if(index === 1){
+          let frm2 = document.getElementById('form2')
+          frm2.innerHTML = ''
+          frm2.style.height = "60px";
+          row.split(" ").forEach((element, j)=>
+          {
+            let textfield = document.createElement("input");
+            textfield.type = "text";
+            textfield.id = "foo2";
+            textfield.style.left = (j * 55 ) + 35 + "px";
+            textfield.classList.add('rand2'); //myAnimation
+            textfield.value = element;
+            textfield.classList.add('myAnimation2'); //
+            frm2.append(textfield);
+          })
+
+        }
+        return; 
+      })
+    })  
+ }
+
+
+//kesishma
+function kesishma() {
+  let arr = []
+let arr2 = []
+let for1 = document.querySelectorAll('#form input')
+  arr = []
+  for1.forEach((key)=>{
+    arr.push(key.value)
+  })  
+
+  let for2 = document.querySelectorAll('#form2 input')
+  arr2 = []
+  for2.forEach((key)=>{
+    arr2.push(key.value)
+  })  
+  
+  let kesishma = arr.filter(x => arr2.includes(x));
+  console.log(kesishma);
+
+
+      let sort=document.getElementsByName("inp1");
+      let empty="";
+      for (var m=0;m<sort.length;m++) {
+          empty+=sort[m].value+" ";
+          
+      }
+      console.log(empty);
+      
+
+      let sort2=document.getElementsByName("inp2");
+      let empty2="";
+      for (var n=0;n<sort2.length;n++) {
+          empty2+=sort2[n].value+" ";
+          
+      }
+      console.log(empty2);
+
+}
+
+function read() {
+    let text = document.getElementById('text').files[0];
+
+    let reader = new FileReader();
+    
+    reader.readAsText(text);
+
+
+    reader.addEventListener('load',function(){
+      console.log(reader.result)
+      const rows = reader.result.split("\n");
+
+      rows.forEach((row,index)=>{
+        if(index === 0){
+          let frm = document.getElementById('form')
+          frm.innerHTML = ''
+          frm.style.height = "37px";
+          row.split(" ").forEach((element, j)=>
+          {
+            let textfield = document.createElement("input");
+            textfield.type = "text";
+            textfield.id = "foo";
+            textfield.style.left = (j * 55 ) + 35 + "px";
+            textfield.classList.add('rand1');
+            textfield.classList.add('myAnimation'); //
+            textfield.value = element;
+            frm.append(textfield);
+          })
+
+        }
+        return; 
+      })
+    })  
+ }
+
+ function read2() {
+    let text = document.getElementById('text2').files[0];
+
+    let reader = new FileReader();
+    
+    reader.readAsText(text);
+
+
+    reader.addEventListener('load',function(){
+      console.log(reader.result)
+      const rows = reader.result.split("\n");
+
+      rows.forEach((row,index)=>{
+        if(index === 1){
+          let frm2 = document.getElementById('form2')
+          frm2.innerHTML = ''
+          frm2.style.height = "60px";
+          row.split(" ").forEach((element, j)=>
+          {
+            let textfield = document.createElement("input");
+            textfield.type = "text";
+            textfield.id = "foo2";
+            textfield.style.left = (j * 55 ) + 35 + "px";
+            textfield.classList.add('rand2'); //myAnimation
+            textfield.value = element;
+            textfield.classList.add('myAnimation2'); //
+            frm2.append(textfield);
+          })
+
+        }
+        return; 
+      })
+    })  
+ }
+
+
+
+
+
+</script>
+</body>
+</html
